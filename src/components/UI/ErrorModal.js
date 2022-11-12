@@ -9,7 +9,8 @@ const ErrorModal = props => {
   return <div>
     {/* sets the overlay for the error so you cannot
     interact with the form when the error occurs */}
-    <div className={classes.backdrop}>
+    {/* sets error onClick to close popup */}
+    <div className={classes.backdrop} onClick={props.onConfirm}>
     <Card className={classes.modal}>
     {/* classes takes css classes predefined in the css file */}
     <header className={classes.header}>
@@ -21,7 +22,8 @@ const ErrorModal = props => {
       </p>
     </div>
     <footer>
-    <Button>Okay</Button>
+      {/* onConfirm is linked with the button component */}
+    <Button onClick={props.onConfirm}>Okay</Button>
     </footer>
   </Card>
   </div>
